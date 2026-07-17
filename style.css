@@ -1,0 +1,13 @@
+:root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f3f5f7; color: #17202a; }
+main { width: min(34rem, calc(100% - 3rem)); padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 1rem 3rem #17202a1f; }
+h1 { margin-top: 0; }
+form { display: grid; gap: .8rem; }
+input, button { box-sizing: border-box; width: 100%; padding: .8rem; font: inherit; }
+button { cursor: pointer; }
+small { color: #52606d; }
+@media (prefers-color-scheme: dark) {
+  body { background: #111820; color: #e8edf2; }
+  main { background: #1b2631; }
+  small { color: #b7c3ce; }
+}
