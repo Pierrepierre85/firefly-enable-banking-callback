@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <title>Lokale bankkoppeling</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main>
+    <h1>Lokale bankkoppeling</h1>
+    <p id="status">De autorisatie wordt teruggestuurd naar je lokale importer.</p>
+    <form id="setup" hidden>
+      <label for="target">Lokale callback-URL</label>
+      <input id="target" type="url" inputmode="url" autocomplete="off"
+             placeholder="http://lokaal-adres:poort/eb-callback" required>
+      <button type="submit">Opslaan en doorgaan</button>
+      <small>Dit adres wordt alleen in deze browser bewaard en niet naar GitHub verzonden.</small>
+    </form>
+    <p><a id="continue" href="#" hidden>Handmatig doorgaan</a></p>
+  </main>
+  <script src="../app.js"></script>
+</body>
+</html>
