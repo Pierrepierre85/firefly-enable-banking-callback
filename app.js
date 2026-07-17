@@ -35,9 +35,21 @@
     window.location.replace(next);
   }
 
+  function hasCallbackData() {
+    return window.location.search.length > 1 || window.location.hash.length > 1;
+  }
+
+  function showConfigured(target) {
+    status.textContent = `Callback ingesteld op ${target}. Start de bankkoppeling vanuit de Firefly III Data Importer.`;
+  }
+
   const saved = localStorage.getItem(storageKey) || '';
   if (validLocalTarget(saved)) {
-    redirect(saved);
+    if (hasCallbackData()) {
+      redirect(saved);
+    } else {
+      showConfigured(saved);
+    }
     return;
   }
 
@@ -53,6 +65,11 @@
     }
     targetInput.setCustomValidity('');
     localStorage.setItem(storageKey, value);
-    redirect(value);
+    if (hasCallbackData()) {
+      redirect(value);
+    } else {
+      setup.hidden = true;
+      showConfigured(value);
+    }
   });
 })();
